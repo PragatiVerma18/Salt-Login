@@ -1,0 +1,17 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!--Home Page-->
+<div class="container py-5">
+    {% include 'main/includes/messages.html' %}
+    {% if user.is_authenticated %}
+    <h1>Hello, {{user.username}}</h1>
+    {% else %}
+    <h2>Please <a href="/login">Login</a> to see Dashboard!</h2>
+    {% endif %}
+</div>
+
+{% endblock %}
